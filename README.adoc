@@ -1,11 +1,65 @@
 = `asciidoc/asciidoctor` experiments
 Nuno Carvalho <https://github.com/ntfc>
+// document type
+:doctype: book
+:toc:
+:toclevels: 3
+:source-highlighter: pygments
+//:pygments-style: tango
+:icons: font
+:sectnums:
 
-This are the results of my experiments with `asciidoc` for project documentation.
+== Introduction
+
+These are the results of my experiments with `asciidoc` for project documentation.
+
+- [*] checked
+- [x] also checked
+- [ ] not checked
+-     normal list item
+
+Things that should work:
+
+* evil theme should pick up some default settings
+* Tables
+  * Borders
+  * Multicolumn/multirow
+* Headers and footers
+  * Company logo on footer/header
+  * Borders
+* Page margins
+* Copyright notices
+* Warning, tips, etc
+* Font
+* Table of contents
+
+=== Examples
+
+Sample code:
+
+[source,java]
+.Factorial.java
+----
+public class Factorial {
+
+	public static void main(String[] args) {
+		final int NUM_FACTS = 100;
+		for(int i = 0; i < NUM_FACTS; i++)
+			System.out.println( i + "! is " + factorial(i));
+	}
+	
+	public static int factorial(int n) {
+		int result = 1;
+		for(int i = 2; i <= n; i++)
+			result *= i;
+		return result;
+	}
+}
+----
 
 Recommended practices.footnote:[http://asciidoctor.org/docs/asciidoc-recommended-practices/]
 
-Convert to HTML
+== Convert to HTML
 
 [[convert-html]]
 [source,bash]
@@ -13,7 +67,7 @@ Convert to HTML
 asciidoctor README.adoc
 ----
 
-Convert to PDF
+== Convert to PDF
 
 [[convert-pdf]]
 [source,bash]
@@ -21,10 +75,14 @@ Convert to PDF
 ./asciidoctor-pdf/bin/asciidoctor-pdf README.adoc
 ----
 
-Convert to PDF with themes
+== Convert to PDF with themes
 
 [[convert-pdf-themes]]
 [source,bash]
 ----
 ./asciidoctor-pdf/bin/asciidoctor-pdf -a pdf-stylesdir=resources/themes/ -a pdf-fontsdir=resources/fonts -a pdf-style=evil README.adoc
 ----
+
+See:
+. https://github.com/asciidoctor/asciidoctor-maven-examples/tree/master/asciidoctor-pdf-example
+. https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc
