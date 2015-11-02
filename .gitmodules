@@ -1,0 +1,6 @@
+[submodule "asciidoctor-fopub"]
+	path = asciidoctor-fopub
+	url = https://github.com/asciidoctor/asciidoctor-fopub
+[submodule "asciidoctor-pdf"]
+	path = asciidoctor-pdf
+	url = https://github.com/asciidoctor/asciidoctor-pdf
