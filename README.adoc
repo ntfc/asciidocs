@@ -3,4 +3,28 @@ Nuno Carvalho <https://github.com/ntfc>
 
 This are the results of my experiments with `asciidoc` for project documentation.
 
+Recommended practices.footnote:[http://asciidoctor.org/docs/asciidoc-recommended-practices/]
 
+Convert to HTML
+
+[[convert-html]]
+[source,bash]
+----
+asciidoctor README.adoc
+----
+
+Convert to PDF
+
+[[convert-pdf]]
+[source,bash]
+----
+./asciidoctor-pdf/bin/asciidoctor-pdf README.adoc
+----
+
+Convert to PDF with themes
+
+[[convert-pdf-themes]]
+[source,bash]
+----
+./asciidoctor-pdf/bin/asciidoctor-pdf -a pdf-stylesdir=resources/themes/ -a pdf-fontsdir=resources/fonts -a pdf-style=evil README.adoc
+----
