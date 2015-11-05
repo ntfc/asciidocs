@@ -1,4 +1,4 @@
-= `asciidoc/asciidoctor` experiments
+= Asciidoc/asciidoctor experiments
 Nuno Carvalho <https://github.com/ntfc>
 // document type
 :doctype: book
@@ -11,11 +11,56 @@ Nuno Carvalho <https://github.com/ntfc>
 
 == Introduction
 
-IMPORTANT: while asciidoctor-pdf is quite good, it cannot be used in corporate
+Lead is the lead paragraph. Output:
+
+[.lead]
+This is the lead paragraph.
+
+NOTE: while asciidoctor-pdf is quite good, it cannot be used in corporate
 documents because it lacks title_page customization, copyright notices, etc
 which are fundamental.
 
 These are the results of my experiments with `asciidoc` for project documentation.
+
+TIP: See https://github.com/asciidoctor/asciidoctor-pdf/issues/337[#337] for
+instructions on how to extend asciidoctor-pdf with ruby
+
+[IMPORTANT]
+====
+To generate corporate documents with custom title_page, copyright notices, etc
+we will need to write custom extensions to asciidoctor-pdf, while the theming
+capabilities are not advanced.
+
+To run a custom extension: 
+
+[source,bash]
+----
+./asciidoctor-pdf/bin/asciidoctor-pdf -a pdf-stylesdir=resources/themes/ -a pdf-fontsdir=resources/fonts -a pdf-style=evil -r ./pdf-extensions.rb README.adoc # <1>
+----
+<1> Note that `-r` expects an executable, hence we have to pass the file with a
+preceding `./`
+====
+
+// table with the relative width of the 3 columns specified in cols
+[cols="1,1,2",options="header"]
+|===
+|Revision Date |Sections Revised |Description of Revisions 
+
+|2015-07-21
+|First Release
+|All new content.
+
+|2015-10-16
+|Template.
+|Changes to the document template.
+
+.2+|2015-11-11
+|Fixed issues
+|Added list of issues fixed by this Patch. Added list of issues fixed by this Patch. Added list of issues fixed by this Patch. Added list of issues fixed by this Patch.
+
+|Diffenrete Fixed issues
+|ist of issues fixed by this Patch. Added list of issues fixed by this Patch. Added list of issues fixed by this Patch.
+|===
 
 Things that should work:
 
@@ -31,6 +76,14 @@ Things that should work:
 * Warning, tips, etc
 * Font
 * Table of contents
+
+The `---` will be a thematic break.
+
+'''
+
+And `<<<` will be a page break:
+
+<<<
 
 === Examples
 
