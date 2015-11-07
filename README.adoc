@@ -64,18 +64,18 @@ preceding `./`
 
 Things that should work:
 
-* evil theme should pick up some default settings
-* Tables
-  * Borders
-  * Multicolumn/multirow
-* Headers and footers
-  * Company logo on footer/header
-  * Borders
-* Page margins
-* Copyright notices
-* Warning, tips, etc
-* Font
-* Table of contents
+* [x] evil theme should pick up some default settings
+* [x] Tables
+** [x] Borders
+** [x] Multicolumn/multirow
+* [ ] Headers and footers
+** [ ] Company logo on footer/header
+** [ ] Borders
+* [ ] Page margins
+* [ ] Copyright notices
+* [ ] Warning, tips, etc
+* [ ] Font
+* [ ] Table of contents
 
 The `---` will be a thematic break.
 

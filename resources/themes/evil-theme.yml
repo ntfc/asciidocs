@@ -31,6 +31,8 @@ font:
       bold_italic: Palatino-Linotype-BoldItalic.ttf
   fallbacks:
     - M+ 1p Fallback
+base:
+  font_family: Noto Serif
 page:
   layout: portrait
   # top, right, bottom, left
@@ -60,8 +62,13 @@ title_page:
     font_size: $base_font_size_large
     font_color: $evil_color_lightgray
 table:
+  # outer border
   border_color: $evil_color_lightblue
-  border_width: 2
+  border_width: 1.5
+  border:
+    inner_width: 0.5
+    inner_color: $evil_color_lightgray
+  cell_padding: [3mm, 3mm, 3mm, 3mm]
 
 toc:
   h1_font_style: bold
