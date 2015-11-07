@@ -1,0 +1,22 @@
+[colophon]
+= Contact Information
+ifdef::backend-pdf[]
+:colophon_no_left_footer:
+endif::backend-pdf[]
+
+Corporation +
+Address +
+City +
+Country
+
+Support: https://support.corporation.com
+
+For more information, visit https://www.corporation.com
+
+[role=copyright]
+--
+*Corporation (C) 2015* +
+This is another line
+
+Thank you
+--

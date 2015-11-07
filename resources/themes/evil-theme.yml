@@ -3,6 +3,16 @@ evil:
     lightblue: 0072aa
     lightgray: 595959
   logo: images/company-logo.svg
+  logopng: images/company-logo.png
+  page:
+    # taken from Word
+    margin:
+      #top: 5.08cm
+      top: 4.5cm
+      bottom: 3.68cm
+      right: 1.9cm
+      left: 3.68cm
+    a4: [20.98cm, 29.72cm]
 font:
   catalog:
     # Noto Serif supports Latin, Latin-1 Supplement, Latin Extended-A, Greek, Cyrillic, Vietnamese & an assortment of symbols
@@ -29,26 +39,38 @@ font:
       bold: Palatino-Linotype-Bold.ttf
       italic: Palatino-Linotype-Italic.ttf
       bold_italic: Palatino-Linotype-BoldItalic.ttf
+    Arial:
+      normal: Arial.ttf
+      bold: Arial-Bold.ttf
+      italic: Arial-Italic.ttf
+      bold_italic: Arial-Bold-Italic.ttf
+    Arial Narrow:
+      normal: Arial-Narrow.ttf
+      bold: Arial-Narrow-Bold.ttf
+      italic: Arial-Narrow-Italic.ttf
+      bold_italic: Arial-Narrow-Bold-Italic.ttf
   fallbacks:
     - M+ 1p Fallback
 base:
-  font_family: Noto Serif
+  font_family: Arial
+  font_size: 10
+  align: justify
 page:
   layout: portrait
   # top, right, bottom, left
-  margin: [0.5in, 0.75in, 0.51in, 1.25in]
-  size: LETTER
+  margin: [$evil_page_margin_top, $evil_page_margin_right, $evil_page_margin_bottom, $evil_page_margin_left]
+  size: $evil_page_a4
 heading:
   font_color: $evil_color_lightblue
   font_style: bold
 title_page:
   align: left
   logo:
-    top: 4%
+    top: 0%
     image: image:$evil_logo[scaledwidth="40%"]
     align: right
   title:
-    top: 18%
+    top: 20%
     font:
       size: floor($heading_h1_font_size * 1.0)
       color: $evil_color_lightblue
@@ -61,6 +83,8 @@ title_page:
     margin_top: $base_font_size * 1.25
     font_size: $base_font_size_large
     font_color: $evil_color_lightgray
+  revision:
+    margin_top: $base_font_size * 2.25
 table:
   # outer border
   border_color: $evil_color_lightblue
@@ -69,11 +93,10 @@ table:
     inner_width: 0.5
     inner_color: $evil_color_lightgray
   cell_padding: [3mm, 3mm, 3mm, 3mm]
-
 toc:
   h1_font_style: bold
   h2_font_style: bold
-  line_height: 1.4
+  line_height: 1.75
 # to use callouts, we need the change the font_family to M+ 1mn on:
 # * conum
 # * literal
@@ -89,3 +112,27 @@ conum:
   font_family: M+ 1mn
   font_size: $base_font_size
   line_height: 4 / 3
+header:
+  height: $evil_page_margin_top
+#  background_color: 00ff00
+  # top, right, bottom, left
+  padding: [1.25cm, 0cm, 0, 1]
+  image_vertical_align: top
+  recto_content:
+    right: image:$evil_logopng[width=200]
+  verso_content:
+    right: image:$evil_logopng[width=200]
+footer:
+  height: $evil_page_margin_bottom
+#  background_color: 00ff00
+  font:
+    size: 10
+    family: Arial Narrow
+  recto_content:
+    right: '*{page-number}*'
+    left: '{document-title}'
+  verso_content:
+    right: '*{page-number}*'
+    left: '{document-title}'
+  recto_font:
+    color: $evil_color_lightblue
