@@ -3,7 +3,7 @@
 	url = https://github.com/asciidoctor/asciidoctor-fopub
 [submodule "asciidoctor-pdf"]
 	path = asciidoctor-pdf
-	url = https://github.com/asciidoctor/asciidoctor-pdf
+	url = https://github.com/ntfc/asciidoctor-pdf
 [submodule "asciidoctor"]
 	path = asciidoctor
 	url = git@github.com:asciidoctor/asciidoctor.git
